@@ -32,7 +32,6 @@ const Body = () => {
     const addData = e => {
         e.preventDefault();
         let data =  [...cards];
-        console.log(data)
         data.push(newData);
         setCards(data);
         setNewData({
@@ -48,17 +47,25 @@ const Body = () => {
         setCards(data);
     }
 
-      const renderCard = (card, index) => {
+    const removeItem = id => {
+        console.log(id)
+        let data =  [...cards];
+        data.splice(id, 1);
+        setCards(data);
+    }
+
+    const renderCard = (card, index) => {
         return (
-          <Liste 
+            <Liste 
             key={card.id} 
             index={index} 
             list={card}
             moveCard={moveCard}
             toggleActive={toggleActive}
-          />
+            removeItem={removeItem}
+            />
         );
-      };
+    };
 
 
     return (

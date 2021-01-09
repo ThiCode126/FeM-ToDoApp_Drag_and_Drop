@@ -65,16 +65,20 @@ section#body {
                 border-bottom: none;
             }
 
-            .name-value {
-                padding-left: 12px;
-                padding-top: 3px;
-            }
-
             .circle-check.completed {
                 background: $backGradient;
                 display: flex;
                 align-items: center;
                 justify-content: center;
+            }
+
+            .name-value {
+                padding-left: 12px;
+                padding-top: 3px;
+            }
+
+            .cross {
+                cursor: pointer;
             }
         }
     }

@@ -5,7 +5,7 @@ import { ItemTypes } from '../utils/ItemTypes';
 import SvgIconCross from './IconCross';
 import SvgIconCheck from './IconCheck';
 
-const Liste = ({list, index, moveCard, toggleActive}) => {
+const Liste = ({list, index, moveCard, toggleActive, removeItem}) => {
 
     const { id, name, active } = list;
 
@@ -79,7 +79,7 @@ const Liste = ({list, index, moveCard, toggleActive}) => {
            <span className="name-value">
                {name}
            </span>
-           <span className="cross">
+           <span className="cross" onClick={() => removeItem(index)}>
                <SvgIconCross />
            </span>
         </div>
