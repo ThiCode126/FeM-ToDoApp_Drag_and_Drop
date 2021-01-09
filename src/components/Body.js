@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import update from 'immutability-helper';
 
 import jsonData from '../utils/data.json';
@@ -7,11 +7,24 @@ import Liste from './Liste';
 const Body = () => {
 
     const [ cards, setCards ] = useState(jsonData);
+    const [ numberItemLeft, setNumberItemLeft ] = useState(0);
     const [ newData, setNewData ] = useState({
         "id": cards.length,
         "name": "",
         "active": true
     });
+
+    useEffect(() => {
+        let n = 0;
+        for (let i = 0; i < cards.length; i++) {
+            console.log(cards[i])
+            if (cards[i].active) {
+                n++;
+            }
+        }
+        setNumberItemLeft(n);
+
+    }, [cards, numberItemLeft]);
 
     const moveCard = useCallback((dragIndex, hoverIndex) => {
       const dragCard = cards[dragIndex];
@@ -48,7 +61,6 @@ const Body = () => {
     }
 
     const removeItem = id => {
-        console.log(id)
         let data =  [...cards];
         data.splice(id, 1);
         setCards(data);
@@ -66,6 +78,19 @@ const Body = () => {
             />
         );
     };
+
+    const removeCompleted = () => {
+        let data =  [...cards];
+        for (let i = 0; i < data.length; i++) {
+            console.log(data[i])
+            if (!data[i].active) {
+                data.splice(i, 1);
+            }
+        }
+        
+        setCards(data);
+
+    }
 
 
     return (
@@ -88,8 +113,8 @@ const Body = () => {
                         cards.map((card, i) => renderCard(card, i))
                     }
                     <div className="list list-info" draggable="false">
-                        <span>5 items left</span>
-                        <span>Clear Completed</span>
+                        <span>{numberItemLeft} items left</span>
+                        <span className="pointer" onClick={removeCompleted}>Clear Completed</span>
                     </div>
                 </div>
         </section>

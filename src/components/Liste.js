@@ -79,7 +79,7 @@ const Liste = ({list, index, moveCard, toggleActive, removeItem}) => {
            <span className="name-value">
                {name}
            </span>
-           <span className="cross" onClick={() => removeItem(index)}>
+           <span className="pointer" onClick={() => removeItem(index)}>
                <SvgIconCross />
            </span>
         </div>
