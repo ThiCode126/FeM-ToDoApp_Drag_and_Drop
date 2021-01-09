@@ -27,6 +27,9 @@ section#body {
                 outline: none;
             }
         }
+        button.btn-sub {
+            display: none;
+        }
     }
 
     .todo-list {

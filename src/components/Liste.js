@@ -5,7 +5,7 @@ import { ItemTypes } from '../utils/ItemTypes';
 import SvgIconCross from './IconCross';
 import SvgIconCheck from './IconCheck';
 
-const Liste = ({list, index, moveCard}) => {
+const Liste = ({list, index, moveCard, toggleActive}) => {
 
     console.log(list)
 
@@ -69,7 +69,10 @@ const Liste = ({list, index, moveCard}) => {
             id={`id-${id}`} 
             ref={ref}
         >
-            <div className={`circle-check ${active ? 'active' : 'completed'}`}>
+            <div 
+                className={`circle-check ${active ? 'active' : 'completed'}`}
+                onClick={() => toggleActive(id)}
+            >
                 {
                     active ?  '' : <SvgIconCheck />
                 }
