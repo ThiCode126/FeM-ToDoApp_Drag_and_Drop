@@ -7,8 +7,6 @@ import SvgIconCheck from './IconCheck';
 
 const Liste = ({list, index, moveCard, toggleActive}) => {
 
-    console.log(list)
-
     const { id, name, active } = list;
 
     const ref = useRef(null);
@@ -71,7 +69,7 @@ const Liste = ({list, index, moveCard, toggleActive}) => {
         >
             <div 
                 className={`circle-check ${active ? 'active' : 'completed'}`}
-                onClick={() => toggleActive(id)}
+                onClick={() => toggleActive(index)}
             >
                 {
                     active ?  '' : <SvgIconCheck />

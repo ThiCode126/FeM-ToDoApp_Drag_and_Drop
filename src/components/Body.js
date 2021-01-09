@@ -23,32 +23,30 @@ const Body = () => {
       }));
       }, [cards]);
 
-      const handleChangeName = e => {
-          let data = { ...newData};
-          data.name = e.target.value;
-          setNewData(data);
-      }
+    const handleChangeName = e => {
+        let data = { ...newData};
+        data.name = e.target.value;
+        setNewData(data);
+    }
  
-        const addData = e => {
-            e.preventDefault();
-            let data =  [...cards];
-            console.log(data)
-            data.push(newData);
-            setCards(data);
-            setNewData({
-                "id": data.length,
-                "name": "",
-                "active": true
-            }); 
-        }
+    const addData = e => {
+        e.preventDefault();
+        let data =  [...cards];
+        console.log(data)
+        data.push(newData);
+        setCards(data);
+        setNewData({
+            "id": data.length,
+            "name": "",
+            "active": true
+        }); 
+    }
 
-      const toggleActive = id => {
+    const toggleActive = id => {
         let data =  [...cards];
         data[id].active = !data[id].active;
-        console.log(data)
         setCards(data);
-
-      }
+    }
 
       const renderCard = (card, index) => {
         return (
