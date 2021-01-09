@@ -3,6 +3,13 @@
 body {
     font-family: 'Josefin Sans', sans-serif;
     font-size: 18px;
-    background-color: $veryLightGray;
+
+    &.light-theme {
+        background-color: $veryLightGray;
+    }
+
+    &.dark-theme {
+        background-color: $veryDarkBlue;
+    }
 
 }
