@@ -63,7 +63,7 @@ const Liste = ({list, index, moveCard, toggleActive}) => {
       drag(drop(ref));
     return (
         <div 
-            className="list"  style={{opacity }}
+            className="list list-grid"  style={{opacity }}
             id={`id-${id}`} 
             ref={ref}
         >

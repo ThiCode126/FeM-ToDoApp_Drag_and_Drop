@@ -22,6 +22,7 @@ section#body {
             line-height: 12px;
             border-radius: 5px;
             border: none;
+            letter-spacing: -0.17px;
 
             &:focus {
                 outline: none;
@@ -36,10 +37,22 @@ section#body {
         .list {
             border-bottom-width: 1px;
             border-bottom-style: solid;
-            padding: 16px 20px;
-            display: grid;
-            grid-template-columns: 20px auto 12px;
-            grid-template-rows: 20px;
+            font-size: 12px;
+            line-height: 12px;
+            letter-spacing: -0.17px;
+
+            &.list-grid {
+                padding: 16px 20px;
+                display: grid;
+                grid-template-columns: 20px auto 12px;
+                grid-template-rows: 20px;
+            }
+
+            &.list-info {
+                padding: 16px 20px 22px;
+                display: flex;
+                justify-content: space-between;
+            }
 
             &:first-child {
                 border-top-left-radius: 5px;
@@ -55,8 +68,6 @@ section#body {
             .name-value {
                 padding-left: 12px;
                 padding-top: 3px;
-                font-size: 12px;
-                line-height: 12px;
             }
 
             .circle-check.completed {
@@ -83,8 +94,13 @@ section#body {
                 background: #FFF;
                 color: $veryDarkGrayishBlue_light;
                 border-bottom-color: $veryLightGrayishBlue;
+
+                &.list-info {
+                    color: $darkGrayishBlue_light;
+                }
     
                 .name-value {
+                    color: $veryDarkGrayishBlue_light;
                 }
             }
         }
@@ -103,8 +119,13 @@ section#body {
                 background: $veryDarkDesaturatedBlue;
                 color: $lightGrayishBlue;
                 border-bottom-color: $veryDarkGrayishBlue_dark;
+
+                &.list-info {
+                    color: $darkGrayishBlue_light;
+                }
     
                 .name-value {
+                    color: $darkGrey;
                 }
             }
         }

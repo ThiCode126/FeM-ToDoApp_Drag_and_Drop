@@ -77,9 +77,13 @@ const Body = () => {
                 </form>
             </div>
                 <div className="todo-list">
-                {
-                    cards.map((card, i) => renderCard(card, i))
-                }
+                    {
+                        cards.map((card, i) => renderCard(card, i))
+                    }
+                    <div className="list list-info" draggable="false">
+                        <span>5 items left</span>
+                        <span>Clear Completed</span>
+                    </div>
                 </div>
         </section>
     )
