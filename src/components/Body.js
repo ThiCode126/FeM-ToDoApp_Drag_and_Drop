@@ -17,7 +17,6 @@ const Body = () => {
     useEffect(() => {
         let n = 0;
         for (let i = 0; i < cards.length; i++) {
-            console.log(cards[i])
             if (cards[i].active) {
                 n++;
             }
