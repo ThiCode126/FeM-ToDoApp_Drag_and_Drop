@@ -1,15 +1,51 @@
 @import 'vars';
 
-body {
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 18px;
+section#body {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
 
+    .create {
+        position: relative;
+
+        .circle-check {
+            position: absolute;
+            top: 14px;
+            left: 20px;
+        }
+    
+        input[type=text]#name {
+            height: 48px;
+            width: calc(100% - 52px);
+            padding-left: 52px;
+            font-size: 12px;
+            line-height: 12px;
+            border-radius: 5px;
+            border: none;
+
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+}
+
+body {
     &.light-theme {
-        background-color: $veryLightGray;
+    
+        input[type=text]#name {
+            background: #FFF;
+            color: $darkGrayishBlue_light;
+            box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
+        }
     }
 
     &.dark-theme {
-        background-color: $veryDarkBlue;
+    
+        input[type=text]#name {
+            background: $veryDarkDesaturatedBlue;
+            color: $darkGrayishBlue_dark;
+            box-shadow: 0px 35px 50px -15px rgba(0, 0, 0, 0.5);
+        }
     }
-
 }

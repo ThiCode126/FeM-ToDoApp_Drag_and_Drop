@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import Header from './components/Header';
+import Body from './components/Body';
 
 
 function App() {
@@ -16,9 +18,10 @@ function App() {
   }
 
   return (
-    <div>
-      <button type="button" onClick={handleTheme} > Theme </button>
-    </div>
+    <>
+      <Header handleTheme={handleTheme} isDark={isDark} />
+      <Body />
+    </>
   );
 }
 

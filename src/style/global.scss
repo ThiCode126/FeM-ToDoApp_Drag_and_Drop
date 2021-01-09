@@ -1,0 +1,37 @@
+@import 'vars';
+
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 18px;
+    width: 327px;
+    margin: 0 auto ;
+    padding: 48px 24px;
+    background-repeat: no-repeat;
+    background-position-x: center;
+
+    &.light-theme {
+        background-color: $veryLightGray;
+        background-image: url('../assets/bg-mobile-light.jpg');
+
+        .circle-check {
+            border-color: $veryLightGrayishBlue;
+        }
+    }
+
+    &.dark-theme {
+        background-color: $veryDarkBlue;
+        background-image: url('../assets/bg-mobile-dark.jpg');
+
+        .circle-check {
+            border-color: $veryDarkGrayishBlue_dark;
+        }
+    }
+
+    .circle-check {
+        height: 20px;
+        width: 20px;
+        border-width: 1px;
+        border-style: solid;
+        border-radius: 50%;
+    }
+}
