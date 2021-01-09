@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Body from './components/Body';
+import { DndProvider } from 'react-dnd';
+import { HTML5Backend } from 'react-dnd-html5-backend';
 
 
 function App() {
@@ -9,8 +11,9 @@ function App() {
   const [ isDark, setIsDark ] = useState(false);
 
   useEffect(() => {
+    const rootDiv = document.getElementById('root');
     const classCard = isDark ? 'dark' : 'light';
-    document.body.classList = `${classCard}-theme`;
+    rootDiv.classList = `${classCard}-theme`;
   }, [isDark]);
 
   const handleTheme = () => {
@@ -18,10 +21,11 @@ function App() {
   }
 
   return (
-    <>
+    
+    <DndProvider backend={HTML5Backend}>
       <Header handleTheme={handleTheme} isDark={isDark} />
       <Body />
-    </>
+    </DndProvider>
   );
 }
 

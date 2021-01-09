@@ -1,7 +1,8 @@
 @import 'vars';
 
-body {
+#root {
     font-family: 'Josefin Sans', sans-serif;
+    font-weight: 400;
     font-size: 18px;
     width: 327px;
     margin: 0 auto ;
@@ -28,8 +29,8 @@ body {
     }
 
     .circle-check {
-        height: 20px;
-        width: 20px;
+        height: 18px;
+        width: 18px;
         border-width: 1px;
         border-style: solid;
         border-radius: 50%;
