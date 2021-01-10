@@ -68,7 +68,7 @@ const Liste = ({list, index, moveCard, toggleActive, removeItem}) => {
             ref={ref}
         >
             <div 
-                className={`circle-check ${active ? 'active' : 'completed'}`}
+                className={`circle-check pointer ${active ? 'active' : 'completed'}`}
                 onClick={() => toggleActive(index)}
             >
                 {
@@ -76,7 +76,7 @@ const Liste = ({list, index, moveCard, toggleActive, removeItem}) => {
                 }
             </div>
 
-           <span className={`name-value ${active ? 'active' : 'completed'}`}>
+           <span className={`name-value pointer ${active ? 'active' : 'completed'}`}>
                {name}
            </span>
            <span className="pointer" onClick={() => removeItem(index)}>

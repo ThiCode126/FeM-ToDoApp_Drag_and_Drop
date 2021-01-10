@@ -96,7 +96,7 @@ section#body {
         }
     }
 }
-
+//Thème
 #root {
     &.light-theme {
     
@@ -169,5 +169,12 @@ section#body {
             background:$veryDarkDesaturatedBlue;
             color: $darkGrey;
         }
+    }
+}
+
+// Desktop
+@media (min-width: 1440px) {
+    section#body {
+        gap: 24px;
     }
 }

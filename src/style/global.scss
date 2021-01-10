@@ -40,3 +40,18 @@
         cursor: pointer;
     }
 }
+
+@media (min-width: 1440px) {
+    #root {
+        width: 540px;
+        padding: 70px 450px 52px;
+
+        &.light-theme {
+            background-image: url('../assets/bg-desktop-light.jpg');
+        }
+    
+        &.dark-theme {
+            background-image: url('../assets/bg-desktop-dark.jpg');
+        }
+    }
+}

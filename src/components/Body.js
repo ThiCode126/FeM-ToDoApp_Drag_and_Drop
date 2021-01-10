@@ -3,9 +3,9 @@ import update from 'immutability-helper';
 
 import jsonData from '../utils/data.json';
 import Liste from './Liste';
+import Filter from './Filter';
 
 const Body = () => {
-
     const [ cards, setCards ] = useState(jsonData);
     const [ cardsFilter, setCardsFilter ] = useState([...cards]);
     const [ numberItemLeft, setNumberItemLeft ] = useState(0);
@@ -105,6 +105,7 @@ const Body = () => {
         setFilter(status)
     }
 
+    console.log(useIsMobile())
 
     return (
         <section id="body">
@@ -130,26 +131,14 @@ const Body = () => {
                     <span className="pointer" onClick={removeCompleted}>Clear Completed</span>
                 </div>
             </div>
-            <div className="filter">
-                <span 
-                    className={`pointer ${filter === null ? 'active' : ''}`} 
-                    onClick={() => handleFilter(null)}
-                >
-                    All
-                </span>
-                <span 
-                    className={`pointer ${filter === true ? 'active' : ''}`} 
-                    onClick={() => handleFilter(true)}
-                >
-                    Active
-                </span>
-                <span 
-                    className={`pointer ${filter === false ? 'active' : ''}`} 
-                    onClick={() => handleFilter(false)}
-                >
-                    Completed
-                </span>
-            </div>
+            {
+                useIsMobile() && 
+                <Filter
+                    type="mobile" 
+                    handleFilter={handleFilter}
+                    filter={filter}
+                />
+            }
         </section>
     )
 }
