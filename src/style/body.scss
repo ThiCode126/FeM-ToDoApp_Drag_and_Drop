@@ -75,7 +75,24 @@ section#body {
             .name-value {
                 padding-left: 12px;
                 padding-top: 3px;
+                
+                &.completed {
+                    text-decoration: line-through;
+                }
             }
+        }
+    }
+
+    .filter {
+        border-radius: 5px;
+        padding: 15px 80px;
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        line-height: 14px;
+
+        span.active {
+            color: $brightBlue;
         }
     }
 }
@@ -100,9 +117,20 @@ section#body {
                 }
     
                 .name-value {
-                    color: $veryDarkGrayishBlue_light;
+                    &.active {
+                        color: $veryDarkGrayishBlue_light;
+                    }
+                
+                    &.completed {
+                        color: $lightGrayishBlue;
+                    }
                 }
             }
+        }
+
+        .filter {
+            background: #FFF;
+            color: $darkGrayishBlue_light;
         }
     }
 
@@ -125,9 +153,21 @@ section#body {
                 }
     
                 .name-value {
-                    color: $darkGrey;
+                    &.active {
+                        color: $darkGrey;
+                    }
+                
+                    &.completed {
+                        color: $veryDarkGrayishBlue;
+                    }
+                    
                 }
             }
+        }
+
+        .filter {
+            background:$veryDarkDesaturatedBlue;
+            color: $darkGrey;
         }
     }
 }

@@ -76,7 +76,7 @@ const Liste = ({list, index, moveCard, toggleActive, removeItem}) => {
                 }
             </div>
 
-           <span className="name-value">
+           <span className={`name-value ${active ? 'active' : 'completed'}`}>
                {name}
            </span>
            <span className="pointer" onClick={() => removeItem(index)}>

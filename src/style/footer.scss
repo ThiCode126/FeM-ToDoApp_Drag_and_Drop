@@ -1,0 +1,23 @@
+@import 'vars';
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 14px;
+    line-height: 14px;
+    letter-spacing: -0.19px;
+}
+#root {
+    &.light-theme {
+        footer {
+            color: $darkGrayishBlue_light;
+        }
+    }
+
+    &.dark-theme {
+        footer {
+            color: $darkGrey;
+        }
+    
+    }
+}

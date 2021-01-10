@@ -7,12 +7,14 @@ import Liste from './Liste';
 const Body = () => {
 
     const [ cards, setCards ] = useState(jsonData);
+    const [ cardsFilter, setCardsFilter ] = useState([...cards]);
     const [ numberItemLeft, setNumberItemLeft ] = useState(0);
     const [ newData, setNewData ] = useState({
         "id": cards.length,
         "name": "",
         "active": true
     });
+    const [ filter, setFilter ] = useState(null);
 
     useEffect(() => {
         let n = 0;
@@ -24,6 +26,20 @@ const Body = () => {
         setNumberItemLeft(n);
 
     }, [cards, numberItemLeft]);
+
+    useEffect(() => {
+        let newCardsFilter = []
+        if (filter === true) {
+            newCardsFilter = cards.filter(item => item.active === true);
+        } else if (filter === false) {
+            newCardsFilter = cards.filter(item => item.active === false);
+        } else {
+            newCardsFilter = [...cards]
+        }
+
+        setCardsFilter(newCardsFilter)
+
+    }, [cards, filter]);
 
     const moveCard = useCallback((dragIndex, hoverIndex) => {
       const dragCard = cards[dragIndex];
@@ -85,6 +101,10 @@ const Body = () => {
 
     }
 
+    const handleFilter = (status) => {
+        setFilter(status)
+    }
+
 
     return (
         <section id="body">
@@ -101,15 +121,35 @@ const Body = () => {
                     <button type="submit" className="btn-sub"></button>
                 </form>
             </div>
-                <div className="todo-list">
-                    {
-                        cards.map((card, i) => renderCard(card, i))
-                    }
-                    <div className="list list-info" draggable="false">
-                        <span>{numberItemLeft} items left</span>
-                        <span className="pointer" onClick={removeCompleted}>Clear Completed</span>
-                    </div>
+            <div className="todo-list">
+                {
+                    cardsFilter.map((card, i) => renderCard(card, i))
+                }
+                <div className="list list-info" draggable="false">
+                    <span>{numberItemLeft} items left</span>
+                    <span className="pointer" onClick={removeCompleted}>Clear Completed</span>
                 </div>
+            </div>
+            <div className="filter">
+                <span 
+                    className={`pointer ${filter === null ? 'active' : ''}`} 
+                    onClick={() => handleFilter(null)}
+                >
+                    All
+                </span>
+                <span 
+                    className={`pointer ${filter === true ? 'active' : ''}`} 
+                    onClick={() => handleFilter(true)}
+                >
+                    Active
+                </span>
+                <span 
+                    className={`pointer ${filter === false ? 'active' : ''}`} 
+                    onClick={() => handleFilter(false)}
+                >
+                    Completed
+                </span>
+            </div>
         </section>
     )
 }

@@ -6,9 +6,17 @@
     font-size: 18px;
     width: 327px;
     margin: 0 auto ;
-    padding: 48px 24px;
+    padding: 48px 24px 72px;
     background-repeat: no-repeat;
     background-position-x: center;
+
+    .circle-check {
+        height: 18px;
+        width: 18px;
+        border-width: 1px;
+        border-style: solid;
+        border-radius: 50%;
+    }
 
     &.light-theme {
         background-color: $veryLightGray;
@@ -26,14 +34,6 @@
         .circle-check {
             border-color: $veryDarkGrayishBlue_dark;
         }
-    }
-
-    .circle-check {
-        height: 18px;
-        width: 18px;
-        border-width: 1px;
-        border-style: solid;
-        border-radius: 50%;
     }
 
     .pointer {
