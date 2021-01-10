@@ -105,8 +105,6 @@ const Body = () => {
         setFilter(status)
     }
 
-    console.log(useIsMobile())
-
     return (
         <section id="body">
             <div className="create">
@@ -132,7 +130,6 @@ const Body = () => {
                 </div>
             </div>
             {
-                useIsMobile() && 
                 <Filter
                     type="mobile" 
                     handleFilter={handleFilter}
