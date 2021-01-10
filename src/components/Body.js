@@ -80,14 +80,8 @@ const Body = () => {
 
     const removeCompleted = () => {
         let data =  [...cards];
-        for (let i = 0; i < data.length; i++) {
-            console.log(data[i])
-            if (!data[i].active) {
-                data.splice(i, 1);
-            }
-        }
-        
-        setCards(data);
+        const dataFilter = data.filter(item => item.active === true);
+        setCards(dataFilter);
 
     }
 
