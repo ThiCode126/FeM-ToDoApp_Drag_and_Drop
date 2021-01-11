@@ -49,9 +49,21 @@ section#body {
             }
 
             &.list-info {
-                padding: 16px 20px 22px;
-                display: flex;
-                justify-content: space-between;
+                &.list-mobile {
+                    padding: 16px 20px 22px;
+                    display: flex;
+                    justify-content: space-between;
+                }
+                &.list-desktop {
+                    padding: 16px 24px 20px;
+                    display: grid;
+                    grid-template-columns: 165px 166px auto;
+                    
+                    .clear {
+                        text-align: right;
+                        color: $clearColor;
+                    }
+                }
             }
 
             &:first-child {
@@ -84,12 +96,15 @@ section#body {
     }
 
     .filter {
-        border-radius: 5px;
-        padding: 15px 80px;
-        display: flex;
-        justify-content: space-between;
         font-size: 14px;
         line-height: 14px;
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-between;
+
+        &#mobile {
+            padding: 15px 80px;
+        }
 
         span.active {
             color: $brightBlue;

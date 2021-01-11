@@ -5,7 +5,14 @@ import jsonData from '../utils/data.json';
 import Liste from './Liste';
 import Filter from './Filter';
 
+import useWindowDimensions from '../utils/useWindowDimension'
+
+
 const Body = () => {
+
+    const { width } = useWindowDimensions();
+
+    const isSmallWidth = width < 1440 ? true : false ;
     const [ cards, setCards ] = useState(jsonData);
     const [ cardsFilter, setCardsFilter ] = useState([...cards]);
     const [ numberItemLeft, setNumberItemLeft ] = useState(0);
@@ -124,14 +131,26 @@ const Body = () => {
                 {
                     cardsFilter.map((card, i) => renderCard(card, i))
                 }
-                <div className="list list-info" draggable="false">
+                <div 
+                    className={`list list-info ${isSmallWidth ? 'list-mobile' : 'list-desktop'}`} 
+                    draggable="false"
+                >
                     <span>{numberItemLeft} items left</span>
-                    <span className="pointer" onClick={removeCompleted}>Clear Completed</span>
+                    {
+                        !isSmallWidth && 
+                        <Filter
+                            type="desktop"
+                            handleFilter={handleFilter}
+                            filter={filter}
+                        />
+                    }
+                    <span className="pointer clear" onClick={removeCompleted}>Clear Completed</span>
                 </div>
             </div>
             {
+                isSmallWidth && 
                 <Filter
-                    type="mobile" 
+                    type="mobile"
                     handleFilter={handleFilter}
                     filter={filter}
                 />

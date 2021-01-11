@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Filter = ({handleFilter, filter}) => {
+const Filter = ({handleFilter, filter, type}) => {
     return (
         
-        <div className="filter">
+        <div id={type} className="filter">
         <span 
             className={`pointer ${filter === null ? 'active' : ''}`} 
             onClick={() => handleFilter(null)}
