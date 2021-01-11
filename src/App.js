@@ -3,6 +3,7 @@ import Header from './components/Header';
 import Body from './components/Body';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
+import { TouchBackend } from 'react-dnd-touch-backend'
 import Footer from './components/Footer';
 
 
@@ -23,7 +24,7 @@ function App() {
 
   return (
     
-    <DndProvider backend={HTML5Backend}>
+    <DndProvider backend={TouchBackend}>
       <Header handleTheme={handleTheme} isDark={isDark} />
       <Body />
       <Footer />
