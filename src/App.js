@@ -12,7 +12,7 @@ import Footer from './components/Footer';
 function App() {
 
   //Theme
-  const [ isDark, setIsDark ] = useState(false);
+  const [ isDark, setIsDark ] = useState(true);
 
   const varBack = isMobile ? TouchBackend : HTML5Backend;
 

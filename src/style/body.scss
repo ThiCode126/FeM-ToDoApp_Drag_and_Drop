@@ -61,7 +61,6 @@ section#body {
                     
                     .clear {
                         text-align: right;
-                        color: $clearColor;
                     }
                 }
             }
@@ -129,6 +128,10 @@ section#body {
 
                 &.list-info {
                     color: $darkGrayishBlue_light;
+
+                    .clear:hover {
+                        color: $veryDarkGrayishBlue_light;
+                    }
                 }
     
                 .name-value {
@@ -164,7 +167,11 @@ section#body {
                 border-bottom-color: $veryDarkGrayishBlue_dark;
 
                 &.list-info {
-                    color: $darkGrayishBlue_light;
+                    color: $darkGrey;
+
+                    .clear:hover {
+                        color: $lightGrayishHover;
+                    }
                 }
     
                 .name-value {
@@ -191,5 +198,47 @@ section#body {
 @media (min-width: 1440px) {
     section#body {
         gap: 24px;
+    
+        .create {
+
+            .circle-check {
+                top: 20px;
+                left: 24px;
+            }
+
+            input[type=text]#name {
+                height: 62px;
+                font-size: 18px;
+                line-height: 18px;                
+                letter-spacing: -0.25px;
+                padding-left: 72px;
+                width: calc(100% - 74px);
+            }
+        }
+
+        .todo-list {
+
+            .list {
+                font-size: 18px;
+                line-height: 18px;
+                letter-spacing: -0.25px;
+
+                &.list-grid {
+                    padding: 20px 24px;
+                    grid-template-columns: 24px auto 18px;
+                    grid-template-rows: 24px;
+                }
+
+                .pointer svg {
+                    transform: scale(1.5);
+                }
+
+                &.list-desktop {
+                    font-size: 14px;
+                    line-height: 14px;
+                    letter-spacing: -0.194444px;
+                }
+            } 
+        }
     }
 }

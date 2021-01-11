@@ -114,17 +114,21 @@ const Body = () => {
 
     return (
         <section id="body">
+            <h2 className="sro">Body</h2>
             <div className="create">
                 <div className="circle-check"></div>
                 <form onSubmit={addData} >
                     <input 
-                        type="text" 
-                        id="name" 
+                        id="name" type="text" name="create"
                         placeholder="Create a new todo..." 
                         value={newData.name}
                         onChange={handleChangeName}
+                        aria-label="Your ToDo" aria-labelledby="title" title="Your ToDo"
                     />
-                    <button type="submit" className="btn-sub"></button>
+                    <button 
+                        type="submit" className="btn-sub"                        
+                        aria-label="Your Submit" aria-labelledby="title" title="Your Submit"
+                    ></button>
                 </form>
             </div>
             <div className="todo-list">

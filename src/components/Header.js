@@ -8,7 +8,8 @@ const Header = ({handleTheme, isDark}) => {
     return (
         <header>
             <div className="logo"  > 
-                { <SvgLogo />  } 
+                <h1 className="title">TODO</h1>
+                { <SvgLogo /> } 
             </div>
             <div className="theme" onClick={handleTheme} > 
                 { isDark ? <SvgIconSun /> : <SvgIconMoon /> } 
